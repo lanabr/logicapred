@@ -50,5 +50,10 @@ estado_em(florida, estados_unidos).    %estados unidos
 
 cidade_em(X, Z) :- capital(X, Y), estado_em(Y, Z), pais(Z).
 
+cidade_mesmo_pais(X, Y) :- cidade_em(X, Z), cidade_em(Y, Z), pais(Z).
+
+estado_mesmo_pais([], _).
+estado_mesmo_pais([H|T], P) :- estado_em(H, P), pais(P),
+                               estado_mesmo_pais(T, P).
 
 
