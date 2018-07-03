@@ -1,0 +1,2 @@
+# logicapred
+Lógica de Predicado
